@@ -1,0 +1,23 @@
+body{
+     background: linear-gradient(90deg, rgba(189,191,236,1) 13%, rgba(190,224,231,1) 48%, rgba(217,217,227,1) 100%);
+}
+
+.project_header{
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(8, 22, 150);
+}
+
+.projectlabel1{
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(52, 69, 224);
+}
+.projectlabel{
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(102, 104, 124);
+}
+.card{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

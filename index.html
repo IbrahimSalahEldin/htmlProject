@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <h1 class="mb-4 w-75 project_header">Online Store</h1>
+            <div class="card d-flex justify-content-center p-3 w-75">
+                <form id="orderForm" class="d-flex" onsubmit="return validateForm()">
+                    <div class="row justify-content-center">
+                        <div class="mb-3 col-10">
+                            <label for="name" class="form-label projectlabel1">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3 col-10">
+                            <label class="projectlabel1">Choose your items:</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="item1" name="items"
+                                    value="Four 25-watt light bulbs for $2.39">
+                                <label class="projectlabel" class="form-check-label" for="item1">Four 25-watt light bulbs for
+                                    $2.39</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="item2" name="items"
+                                    value="Eight 25-watt light bulbs for $4.29">
+                                <label class="projectlabel" class="form-check-label" for="item2">Eight 25-watt light bulbs for
+                                    $4.29</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="item3" name="items"
+                                    value="Four 25-watt long-life light bulbs for $3.95">
+                                <label class="projectlabel" class="form-check-label" for="item3">Four 25-watt long-life light
+                                    bulbs for $3.95</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="item4" name="items"
+                                    value="Eight 25-watt long-life light bulbs for $7.49">
+                                <label class="projectlabel" class="form-check-label" for="item4">Eight 25-watt long-life light
+                                    bulbs for
+                                    $7.49</label>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-10">
+                            <label class="projectlabel1">Payment Method:</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="visa" name="payment" value="Visa">
+                                <label class="projectlabel" class="form-check-label" for="visa">Visa</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="mastercard" name="payment" value="Master Card">
+                                <label class="projectlabel" class="form-check-label" for="mastercard">Master Card</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="discover" name="payment" value="Discover">
+                                <label class="projectlabel" class="form-check-label" for="discover">Discover</label>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center align-items-center">
+            <p class="projectlabel1 text-center">Video & Audio</p>
+            <div class="col-10 mx-2 mb-5 d-flex justify-content-center">
+                <audio id="audioPlayer" controls autoplay loop  >
+                    <source src="notification.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="col-10 mx-2">
+                <video src="video.mp4" id="videoPlayer" controls autoplay muted  width="100%"></video>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Form Validation
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const items = document.querySelectorAll('input[name="items"]:checked');
+            const payment = document.querySelector('input[name="payment"]:checked');
+
+            if (!name || items.length === 0 || !payment) {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+
+            // You can add additional validation as needed.
+
+            return true;
+        }
+    </script>
+</body>
+</html>
